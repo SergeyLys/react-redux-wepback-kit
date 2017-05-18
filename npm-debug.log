@@ -7,7 +7,7 @@
 6 silly lifecycle react-redux-kit@0.0.1~prestart: no script for prestart, continuing
 7 info lifecycle react-redux-kit@0.0.1~start: react-redux-kit@0.0.1
 8 verbose lifecycle react-redux-kit@0.0.1~start: unsafe-perm in lifecycle true
-9 verbose lifecycle react-redux-kit@0.0.1~start: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/var/www/BigDrop_tasks/react-redux-wepback-kit/node_modules/.bin:/home/bigdrop/.rvm/gems/ruby-2.2.1/bin:/home/bigdrop/.rvm/gems/ruby-2.2.1@global/bin:/home/bigdrop/.rvm/rubies/ruby-2.2.1/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/bigdrop/.rvm/bin:/home/bigdrop/.rvm/bin:/home/bigdrop/.rvm/bin
+9 verbose lifecycle react-redux-kit@0.0.1~start: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/var/www/BigDrop_tasks/react-redux-wepback-kit/node_modules/.bin:/home/bigdrop/.rvm/gems/ruby-2.2.1/bin:/home/bigdrop/.rvm/gems/ruby-2.2.1@global/bin:/home/bigdrop/.rvm/rubies/ruby-2.2.1/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/bigdrop/.rvm/bin:/home/bigdrop/.rvm/bin
 10 verbose lifecycle react-redux-kit@0.0.1~start: CWD: /var/www/BigDrop_tasks/react-redux-wepback-kit
 11 silly lifecycle react-redux-kit@0.0.1~start: Args: [ '-c',
 11 silly lifecycle   'webpack-dev-server --debug --hot --devtool eval-source-map --output-pathinfo --watch --colors --inline --content-base public --port 8090 --host 0.0.0.0' ]

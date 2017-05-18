@@ -27,7 +27,16 @@ const common = {
                 loader: 'babel',
                 exclude: [/node_modules/, /public/]
             },
-
+            {
+                test: /\.css$/,
+                loader: "style-loader!css-loader!autoprefixer-loader",
+                exclude: [/node_modules/, /public/]
+            },
+            {
+                test: /\.scss$/,
+                loader: "style-loader!css-loader!autoprefixer-loader!sass",
+                exclude: [/node_modules/, /public/]
+            },
             {
                 test: /\.gif$/,
                 loader: "url-loader?limit=10000&mimetype=image/gif"
@@ -69,35 +78,6 @@ const common = {
 };
 
 const development = {
-
-    context: __dirname + '/client/css',
-    entry: {
-        styles: "./styles.scss",
-    },
-
-    output: {
-        path:           __dirname + '/public/build/',
-        publicPath:    'build/',
-        filename: '[name].css'
-    },
-
-    devtool: 'cheap-module-eval-source-map',
-
-    module: {
-        loaders: [
-            {
-                test: /\.css$/,
-                loader: "style-loader!css-loader!autoprefixer-loader",
-                exclude: [/node_modules/, /public/]
-            },
-            {
-                test: /\.scss$/,
-                loader: "style-loader!css-loader!autoprefixer-loader!sass",
-                exclude: [/node_modules/, /public/]
-            },
-        ],
-    },
-
     plugins: [
         new webpack.DefinePlugin({
             'process.env': {
@@ -105,7 +85,6 @@ const development = {
             },
             __DEVELOPMENT__: true,
         }),
-        new ExtractTextPlugin('[name].css'),
         new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin()
@@ -118,9 +97,9 @@ var config = [];
 
 
 if (TARGET === 'start' || !TARGET) {
-    config.push(common, development);
+    // config.push(common, development);
     // module.exports = merge(development, common);
-    module.exports = config;
+    module.exports = common;
 }
 //
 // if (TARGET === 'build' || !TARGET) {
