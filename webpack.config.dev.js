@@ -1,18 +1,30 @@
-var webpack = require('webpack');
+import webpack from 'webpack';
+import path from 'path';
 
 module.exports = {
-    entry: "./client/app.js",
+    devtools: 'eval-source-map',
+    entry: [
+        'webpack-hot-middleware/client',
+        path.join(__dirname, '/client/index.js')
+    ],
     output: {
-        path: __dirname + '/public/build/',
-        publicPath: "build/",
-        filename: "bundle.js"
+        path: '/',
+        publicPath: '/'
     },
+    plugins: [
+        new webpack.NoErrorsPlugin(),
+        new webpack.optimize.OccurenceOrderPlugin(),
+        new webpack.HotModuleReplacementPlugin()
+    ],
     module: {
         loaders: [
             {
                 test: /\.js$/,
-                loader: 'babel',
-                exclude: [/node_modules/, /public/]
+                include: [
+                    path.join(__dirname, 'client')
+                ],
+                exclude: [/node_modules/, /public/],
+                loaders: ['react-hot', 'babel']
             },
             {
                 test: /\.css$/,
@@ -41,9 +53,12 @@ module.exports = {
                 loader: "url-loader?limit=26000&mimetype=image/svg+xml"
             },
             {
-                test: /\.jsx$/,
-                loader: "react-hot!babel",
-                exclude: [/node_modules/, /public/]
+                test: /\.js$/,
+                include: [
+                    path.join(__dirname, 'client')
+                ],
+                exclude: [/node_modules/, /public/],
+                loaders: ['react-hot', 'babel']
             },
             {
                 test: /\.json$/,
